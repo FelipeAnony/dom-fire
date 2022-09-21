@@ -1,5 +1,5 @@
-const fireHeight = 100;
-const fireWidth = 100;
+const fireHeight = 50;
+const fireWidth = 50;
 const numberOfPixels = fireWidth * fireHeight;
 
 export function createFirePixelArray(): number[] {

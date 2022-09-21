@@ -1,7 +1,91 @@
+@import './colors';
+
 .firePixelContainer {
   width: max-content;
   height: max-content;
   display: grid;
-  grid-template-columns: repeat(100, 1fr);
-  grid-template-rows: repeat(100, 1fr);
+  grid-template-columns: repeat(50, 1fr);
+  grid-template-rows: repeat(50, 1fr);
+
+  border: 4px solid $chimney-secondary;
+  border-radius: 30% 30% 0 0;
+
+  overflow: hidden;
 }
+
+
+.chimney {
+  width: 300px;
+  height: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .chimneyTop {
+    height: 100%;
+    width: 50%;
+    background-color: $chimney-secondary;
+  }
+
+  .chimneyTopRow {
+    width: 60%;
+    height: 15px;
+    background-color: $chimney-primary;
+    border-radius: 0 0 5px 5px;
+    position: absolute;
+  }
+
+  .chimneyTopRowDown {
+    width: 60%;
+    height: 15px;
+    background-color: $chimney-primary;
+    border-radius: 5px 5px 0 0;
+    position: absolute;
+    top: 47%;
+  }
+
+  .chimneyDown {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    .chimneyRow1 {
+      width: 100%;
+      height: 15px;
+      background-color: $chimney-primary;
+      border-radius: 0 0 5px 5px;
+    }
+
+    .chimneyRow2 {
+      width: 94%;
+      height: 15px;
+      background-color: $chimney-primary;
+      border-radius: 0 0 5px 5px;
+    }
+
+    .chimneyDownWall {
+      width: 80%;
+      height: 100%;
+      background-color: $chimney-secondary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .chimneyRowDown {
+      width: 94%;
+      height: 15px;
+      background-color: $chimney-primary;
+      border-radius: 5px 5px 0 0;
+    }
+
+  }
+
+}
+

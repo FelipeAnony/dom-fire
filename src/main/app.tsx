@@ -19,11 +19,26 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className={Styles.firePixelContainer}>
-      {fireTable.map((e, i) => (
-        <FirePixel key={i} fireIntensity={e} />
-      ))}
-    </div>
+    <article className={Styles.chimney}>
+      <div className={Styles.chimneyTop}></div>
+      <div className={Styles.chimneyTopRow}></div>
+      <div className={Styles.chimneyTopRowDown}></div>
+
+      <div className={Styles.chimneyDown}>
+        <div className={Styles.chimneyRow1}></div>
+        <div className={Styles.chimneyRow2}></div>
+
+        <div className={Styles.chimneyDownWall}>
+          <div className={Styles.firePixelContainer}>
+            {fireTable.map((e, i) => (
+              <FirePixel key={i} fireIntensity={e} />
+            ))}
+          </div>
+        </div>
+
+        <div className={Styles.chimneyRowDown}></div>
+      </div>
+    </article>
   );
 };
 
