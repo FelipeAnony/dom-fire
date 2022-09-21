@@ -1,13 +1,29 @@
+import { useEffect, useState } from 'react';
+
+import {
+  calculateFirePropagation,
+  createFirePixelArray,
+} from '@/controllers/fireController';
+
 import FirePixel from '@/components/firepixel';
 
+import Styles from '../styles/app.scss';
+
 const App: React.FC = () => {
+  const [fireTable, setfireTable] = useState(createFirePixelArray());
+
+  useEffect(() => {
+    setInterval(() => {
+      setfireTable((state) => calculateFirePropagation(state));
+    }, 80);
+  }, []);
+
   return (
-    <>
-      <FirePixel fireIntensity={23} />
-      <FirePixel fireIntensity={15} />
-      <FirePixel fireIntensity={8} />
-      <FirePixel fireIntensity={11} />
-    </>
+    <div className={Styles.firePixelContainer}>
+      {fireTable.map((e, i) => (
+        <FirePixel key={i} fireIntensity={e} />
+      ))}
+    </div>
   );
 };
 
